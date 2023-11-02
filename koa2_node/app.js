@@ -1,7 +1,7 @@
 // 整个koa项目的入口文件
 const Koa = require("koa2") // 引入koa2
 const app = new Koa() // 声明一个实例
-const port = 3000 // 端口号
+// const port = 3000 // 端口号
 // const router = require("./router") // 配置路由
 const Router = require('koa-router')
 const cors = require("koa2-cors") // 解决跨域
@@ -17,8 +17,9 @@ const router = new Router()
 app.use(static(path.join(__dirname + "/public"))) //读取静态资源
 app.use(cors()) //后端允许跨域访问
 
+
 router.get('/data',
-    (ctx) => {
+    async(ctx) => {
         ctx.body = {
             "errno": 0,
             "data": [
@@ -55,6 +56,6 @@ router.get('/data',
 
 app.use(router.routes(), router.allowedMethods())
 
-app.listen(port, () => {
-    console.log(`server in running at http://localhost:${port}`)
+app.listen(80, () => {
+    console.log(`server in running at http://localhost`)
 })

@@ -2,7 +2,7 @@
 // 引入路由
 const Router = require("koa-router")
 const router = new Router()
-const home = require("./home") //导入home,使home中的接口可用
+const home = require("/") //导入home,使home中的接口可用
 
 
 

@@ -129,7 +129,7 @@ const dialogConfirm = () => {
   dialogFormVisible.value = false
 }
 onMounted(() => {
-  axios.get('http://127.0.0.1:3000/data').then(res => {
+  axios.get('http://127.0.0.1/data').then(res => {
     if(res.status !== 200) {
       return alert('请求失败')
     }
